@@ -277,8 +277,8 @@ a:focus-visible, label:focus-visible, .bill-in:focus-visible + .bill-in + .bill 
 }
 @keyframes fill { from { stroke-dasharray: 0 100; } }
 .dial-num { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; }
-.dial-num b { font-size: calc(var(--size) * .15); font-weight: 650; letter-spacing: -.04em; font-variant-numeric: tabular-nums; line-height: 1; }
-.dial-num span { margin-top: 6px; font-size: 14px; font-weight: 600; color: var(--ink-3); }
+.dial-num b { font-size: calc(var(--size) * .14); font-weight: 650; letter-spacing: -.04em; font-variant-numeric: tabular-nums; line-height: 1; }
+.dial-num span { margin-top: 6px; font-size: clamp(11px, calc(var(--size) * .03), 14px); font-weight: 600; color: var(--ink-3); }
 .now {
   position: absolute;
   left: calc(50% + 49% * sin(98deg) - 6px);
@@ -419,7 +419,7 @@ a:focus-visible, label:focus-visible, .bill-in:focus-visible + .bill-in + .bill 
 .struck i { position: relative; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 1px var(--hair); }
 .struck img { width: 32px; height: 32px; transition: filter .6s, opacity .6s; transition-delay: calc(.5s + var(--n, 0) * .12s); }
 .struck i::after { content: ""; position: absolute; left: 10%; right: 10%; top: 50%; height: 2.5px; border-radius: 2px; background: var(--ink); transform: rotate(-35deg) scaleX(0); transition: transform .5s var(--spring) calc(.5s + var(--n, 0) * .12s); }
-.in .struck img { filter: grayscale(1); opacity: .4; }
+.in .struck img { filter: grayscale(1); opacity: .6; }
 .in .struck i::after { transform: rotate(-35deg) scaleX(1); }
 .struck i:nth-child(2) { --n: 1; } .struck i:nth-child(3) { --n: 2; } .struck i:nth-child(4) { --n: 3; } .struck i:nth-child(5) { --n: 4; }
 .allergy, .goals { display: flex; flex-wrap: wrap; gap: 8px; }
