@@ -45,7 +45,7 @@
 
   // ---- reveals
   const roll = (el) => {
-    const to = +el.dataset.count, t0 = performance.now(), dur = 1600;
+    const to = +el.dataset.count, t0 = performance.now(), dur = 1200;
     if (reduce) { el.textContent = to.toLocaleString('en-US'); return; }
     const step = (t) => {
       const k = clamp((t - t0) / dur), e = 1 - Math.pow(1 - k, 4);
@@ -66,7 +66,7 @@
 
   // hero number rolls on load
   const heroN = $('.dial-num [data-count]');
-  if (heroN && !reduce) { heroN.textContent = '0'; setTimeout(() => roll(heroN), 700); }
+  if (heroN && !reduce) { heroN.textContent = '0'; setTimeout(() => roll(heroN), 250); }
 
   // ---- glass sheen follows the pointer
   $$('[data-sheen]').forEach((el) => {

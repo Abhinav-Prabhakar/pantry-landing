@@ -100,7 +100,7 @@ a:focus-visible, label:focus-visible, .bill-in:focus-visible + .bill-in + .bill 
     radial-gradient(30vmax 26vmax at 10% 84%, var(--a3), transparent 68%),
     radial-gradient(30vmax 24vmax at 84% 88%, var(--a2), transparent 70%),
     radial-gradient(22vmax 18vmax at 40% 104%, var(--a1), transparent 70%);
-  animation: drift 26s ease-in-out infinite alternate;
+  animation: drift 26s ease-in-out 4s infinite alternate;
 }
 @keyframes drift { to { transform: translate3d(-2.5%, 2%, 0) scale(1.06) rotate(2deg); } }
 .grain {
@@ -244,8 +244,8 @@ a:focus-visible, label:focus-visible, .bill-in:focus-visible + .bill-in + .bill 
 .display .line:nth-child(2) > span { animation-delay: .1s; }
 .display .line:nth-child(3) > span { animation-delay: .2s; }
 @keyframes lineUp { from { transform: translateY(105%) rotate(3deg); } }
-.hero .lede { animation: rise 1s var(--spring-soft) .35s both; }
-.cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; animation: rise 1s var(--spring-soft) .45s both; }
+.hero .lede { animation: rise .9s var(--spring-soft) .25s both; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; animation: rise .9s var(--spring-soft) .32s both; }
 
 /* the day dial */
 .dial-stage {
@@ -261,13 +261,13 @@ a:focus-visible, label:focus-visible, .bill-in:focus-visible + .bill-in + .bill 
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  animation: dialIn 1.4s var(--spring-soft) .1s both;
+  animation: dialIn 1.2s var(--spring-soft) both;
 }
 @keyframes dialIn { from { transform: scale(.82) rotate(-40deg); } }
 .dial-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
 .ticks { fill: none; stroke: #c8c8cf; stroke-width: 7; stroke-dasharray: .1 .9; }
 .ticks-major { fill: none; stroke: var(--ink); stroke-width: 11; stroke-dasharray: .045 .955; stroke-dashoffset: .0225; }
-.dial-svg .ticks, .dial-svg .ticks-major { transform-origin: 200px 200px; animation: spin 120s linear infinite; }
+.dial-svg .ticks, .dial-svg .ticks-major { transform-origin: 200px 200px; animation: spin 120s linear 4s infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
 .trk { fill: none; stroke: var(--c); stroke-width: 17; opacity: .16; }
 .arc {
@@ -276,7 +276,7 @@ a:focus-visible, label:focus-visible, .bill-in:focus-visible + .bill-in + .bill 
   stroke-width: 17;
   stroke-linecap: round;
   stroke-dasharray: var(--v) 100;
-  animation: fill 1.8s var(--spring-soft) calc(.5s + var(--d)) both;
+  animation: fill 1.4s var(--spring-soft) calc(.2s + var(--d)) both;
 }
 @keyframes fill { from { stroke-dasharray: 0 100; } }
 .dial-num { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; }
@@ -300,7 +300,7 @@ a:focus-visible, label:focus-visible, .bill-in:focus-visible + .bill-in + .bill 
   align-items: center;
   gap: 12px;
   transform: translate(-36px, -50%);
-  animation: pop .9s var(--spring) calc(1s + var(--i) * .14s) both;
+  animation: pop .8s var(--spring) calc(.55s + var(--i) * .1s) both;
 }
 .meal.l { flex-direction: row-reverse; transform: translate(calc(-100% + 36px), -50%); text-align: right; }
 @keyframes pop { from { opacity: 0; scale: .4; } }
