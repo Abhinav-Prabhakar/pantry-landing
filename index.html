@@ -23,12 +23,11 @@
   <meta name="twitter:description" content="Meal prep that hits every nutrient. Plan the week, shop once, cook once on Sunday.">
   <meta name="twitter:image" content="https://abhinav-prabhakar.github.io/pantry-landing/assets/og.jpg">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap">
-  <link rel="stylesheet" href="./style.css?v=6">
+  <link rel="preload" href="./assets/fonts/instrument-serif.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./assets/fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="./style.css?v=7">
   <script>document.documentElement.classList.add("js")</script>
-  <script src="./main.js?v=5" defer></script>
+  <script src="./main.js?v=7" defer></script>
 </head>
 <body>
   <div class="aura" aria-hidden="true"></div>
@@ -116,7 +115,7 @@
     <section class="showcase" data-aura="serve" aria-label="The Pantry home screen">
       <div class="tilt">
         <figure class="ipad">
-          <img src="./assets/shots/home.webp" srcset="./assets/shots/home-900.webp 900w, ./assets/shots/home.webp 1600w" sizes="(max-width: 1100px) 92vw, 1040px" alt="Pantry's home screen: the day as a clock with meals on the rim and macro rings filling" width="1600" height="1000" fetchpriority="high">
+          <img src="./assets/shots/home.webp" srcset="./assets/shots/home-640.webp 640w, ./assets/shots/home-900.webp 900w, ./assets/shots/home.webp 1600w" sizes="(max-width: 1100px) 92vw, 1040px" alt="Pantry's home screen: the day as a clock with meals on the rim and macro rings filling" width="1600" height="1000" fetchpriority="high">
         </figure>
         <div class="float f1 glass" style="--z:1.4">
           <span class="ring-sm" style="--v:91;--c:#0b0b0c"><b>91</b></span>
@@ -349,9 +348,9 @@
         </div>
         <div class="cook-dev">
           <figure class="ipad">
-            <img class="shot on" src="./assets/shots/cook-step.webp" srcset="./assets/shots/cook-step-900.webp 900w, ./assets/shots/cook-step.webp 1600w" sizes="(max-width: 900px) 92vw, 60vw" alt="Cook mode: a step title, ingredient tokens and the dish on a turntable" width="1600" height="1000" loading="lazy">
-            <img class="shot" src="./assets/shots/cook.webp" srcset="./assets/shots/cook-900.webp 900w, ./assets/shots/cook.webp 1600w" sizes="(max-width: 900px) 92vw, 60vw" alt="Cook mode: amounts shown as cups and tablespoons" width="1600" height="1000" loading="lazy">
-            <img class="shot" src="./assets/shots/cook-voice.webp" srcset="./assets/shots/cook-voice-900.webp 900w, ./assets/shots/cook-voice.webp 1600w" sizes="(max-width: 900px) 92vw, 60vw" alt="Cook mode listening hands-free, with two timers running" width="1600" height="1000" loading="lazy">
+            <img class="shot on" src="./assets/shots/cook-step.webp" srcset="./assets/shots/cook-step-640.webp 640w, ./assets/shots/cook-step-900.webp 900w, ./assets/shots/cook-step.webp 1600w" sizes="(max-width: 900px) 92vw, 60vw" alt="Cook mode: a step title, ingredient tokens and the dish on a turntable" width="1600" height="1000" loading="lazy">
+            <img class="shot" src="./assets/shots/cook.webp" srcset="./assets/shots/cook-640.webp 640w, ./assets/shots/cook-900.webp 900w, ./assets/shots/cook.webp 1600w" sizes="(max-width: 900px) 92vw, 60vw" alt="Cook mode: amounts shown as cups and tablespoons" width="1600" height="1000" loading="lazy">
+            <img class="shot" src="./assets/shots/cook-voice.webp" srcset="./assets/shots/cook-voice-640.webp 640w, ./assets/shots/cook-voice-900.webp 900w, ./assets/shots/cook-voice.webp 1600w" sizes="(max-width: 900px) 92vw, 60vw" alt="Cook mode listening hands-free, with two timers running" width="1600" height="1000" loading="lazy">
           </figure>
         </div>
       </div>
@@ -514,7 +513,7 @@
 
   <footer class="foot">
     <a class="brand" href="#top"><img src="./assets/img/mark.webp" alt="" width="24" height="24" loading="lazy"><span>Pantry</span></a>
-    <p>Icons: Microsoft Fluent Emoji (MIT). Food photos: Pexels. Nutrient data: USDA FoodData Central.</p>
+    <p>Type: Instrument Serif (OFL). Icons: Microsoft Fluent Emoji (MIT). Food photos: Pexels. Nutrient data: USDA FoodData Central.</p>
     <p>© 2026 Pantry</p>
   </footer>
 </body>

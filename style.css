@@ -5,6 +5,9 @@
    aura (--a1 --a2 --a3) and accent (--c1 --c2); main.js writes them.
    ========================================================================== */
 
+@font-face { font-family: "Instrument Serif"; font-style: normal; font-weight: 400; font-display: swap; src: url("./assets/fonts/instrument-serif.woff2") format("woff2"); }
+@font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; font-display: swap; src: url("./assets/fonts/instrument-serif-italic.woff2") format("woff2"); }
+
 @property --a1 { syntax: "<color>"; inherits: true; initial-value: #FFD875; }
 @property --a2 { syntax: "<color>"; inherits: true; initial-value: #FF9CC8; }
 @property --a3 { syntax: "<color>"; inherits: true; initial-value: #FFEFBE; }
@@ -260,7 +263,7 @@ a:focus-visible, label:focus-visible, .bill-in:focus-visible + .bill-in + .bill 
   border-radius: 50%;
   animation: dialIn 1.4s var(--spring-soft) .1s both;
 }
-@keyframes dialIn { from { opacity: 0; transform: scale(.82) rotate(-40deg); } }
+@keyframes dialIn { from { transform: scale(.82) rotate(-40deg); } }
 .dial-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
 .ticks { fill: none; stroke: #c8c8cf; stroke-width: 7; stroke-dasharray: .1 .9; }
 .ticks-major { fill: none; stroke: var(--ink); stroke-width: 11; stroke-dasharray: .045 .955; stroke-dashoffset: .0225; }
@@ -380,8 +383,8 @@ a:focus-visible, label:focus-visible, .bill-in:focus-visible + .bill-in + .bill 
 .lt { fill: none; stroke: rgba(11, 11, 12, .06); stroke-width: 22; }
 .la { fill: none; stroke-width: 22; stroke-linecap: round; stroke-dasharray: 0 300; stroke-dashoffset: calc(var(--o) * -1 - 4); transition: stroke-dasharray 1.3s var(--spring-soft) calc(.6s + var(--k)); }
 .big-loop.in .la { stroke-dasharray: 92 300; }
-.node { position: absolute; display: grid; justify-items: center; gap: 4px; font-weight: 650; font-size: 15px; transform: translate(-50%, -50%); }
-.node img { width: 64px; height: 64px; padding: 8px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 1px var(--hair), 0 14px 30px -12px rgba(11, 11, 12, .3); transition: transform .8s var(--spring) var(--k, 0s); }
+.node { position: absolute; width: max-content; display: grid; justify-items: center; gap: 4px; font-weight: 650; font-size: 15px; transform: translate(-50%, -50%); }
+.node img { max-width: none; width: 64px; height: 64px; padding: 8px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 1px var(--hair), 0 14px 30px -12px rgba(11, 11, 12, .3); transition: transform .8s var(--spring) var(--k, 0s); }
 .js .big-loop:not(.in) .node img { transform: scale(0); }
 .n1 { left: 50%; top: 10%; --k: .7s; }
 .n2 { left: 85%; top: 70%; --k: 1.05s; }
@@ -532,13 +535,14 @@ a:focus-visible, label:focus-visible, .bill-in:focus-visible + .bill-in + .bill 
 .cook-in { position: sticky; top: 0; height: 100svh; display: grid; grid-template-columns: minmax(280px, 400px) minmax(0, 1fr); align-items: center; gap: clamp(28px, 4vw, 64px); max-width: 1320px; margin: 0 auto; padding: 90px var(--gut) 40px; }
 .cook-copy .title { font-size: clamp(44px, 5vw, 76px); margin-bottom: 36px; }
 .steps { display: grid; gap: 6px; counter-reset: s; }
-.steps li { position: relative; display: flex; align-items: center; gap: 16px; padding: 14px 16px; border-radius: 26px; opacity: .38; transition: opacity .5s var(--ease), background .5s var(--ease), box-shadow .5s, transform .6s var(--spring); }
-.steps li img { width: 40px; height: 40px; flex: none; transition: transform .6s var(--spring); }
+.steps li { position: relative; display: flex; align-items: center; gap: 16px; padding: 14px 16px; border-radius: 26px; color: var(--ink-3); cursor: pointer; transition: color .5s var(--ease), background .5s var(--ease), box-shadow .5s, transform .6s var(--spring); }
+.steps li img { width: 40px; height: 40px; flex: none; opacity: .45; filter: grayscale(1); transition: transform .6s var(--spring), opacity .5s, filter .5s; }
 .steps li div { display: grid; gap: 3px; }
 .steps li b { font-size: 18px; font-weight: 650; letter-spacing: -.01em; }
-.steps li span { font-size: 15px; color: var(--ink-2); }
-.steps li.on { opacity: 1; background: rgba(255, 255, 255, .7); box-shadow: 0 0 0 1px var(--hair), 0 16px 34px -18px rgba(11, 11, 12, .3); transform: translateX(6px); }
-.steps li.on img { transform: scale(1.15) rotate(-6deg); }
+.steps li span { font-size: 15px; }
+.steps li.on span { color: var(--ink-2); }
+.steps li.on { color: var(--ink); background: rgba(255, 255, 255, .7); box-shadow: 0 0 0 1px var(--hair), 0 16px 34px -18px rgba(11, 11, 12, .3); transform: translateX(6px); }
+.steps li.on img { opacity: 1; filter: none; transform: scale(1.15) rotate(-6deg); }
 .cook-dev .ipad { transform: perspective(1800px) rotateY(-8deg) rotateX(3deg); transform-origin: left center; }
 .cook-dev .ipad { display: grid; }
 .cook-dev .ipad img { grid-area: 1 / 1; opacity: 0; transform: scale(1.03); transition: opacity .7s var(--ease), transform 1s var(--ease); }
