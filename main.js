@@ -176,3 +176,9 @@
   if (lanes) paintSession(0);
   onScroll();
 })();
+
+// The plan buttons carry the billing period chosen above to the app's plan page.
+document.querySelectorAll(".bill-in").forEach((r) => r.addEventListener("change", () => {
+  const period = document.getElementById("b-m").checked ? "month" : "year";
+  document.querySelectorAll("a.buy").forEach((a) => { a.href = a.href.replace(/period=\w+/, "period=" + period); });
+}));

@@ -795,3 +795,4 @@ a:focus-visible, label:focus-visible, .bill-in:focus-visible + .bill-in + .bill 
   .tilt, .float { transform: none !important; opacity: 1 !important; }
 }
 @media (max-width: 600px) { .tile { font-size: 11px; border-radius: 26%; } }
+.pay-note { margin-top: 28px; text-align: center; }
